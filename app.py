@@ -11,7 +11,7 @@ def index():
     response.set_cookie('user_ip', user_ip)
     return response
 
-@app.route('/hello')
+@app.route('/index')
 def hello():
     user_ip = request.cookies.get('user_ip')
     context = {
@@ -20,4 +20,4 @@ def hello():
     }
 
 
-    return render_template('hello.html', **context)
+    return render_template('index.html', **context)
