@@ -7,7 +7,7 @@ todos = ['Create simple flask project', 'Upload project to azure using terraform
 @app.route('/')
 def index():
     user_ip = request.remote_addr
-    response = make_response(redirect('/hello'))
+    response = make_response(redirect('/index'))
     response.set_cookie('user_ip', user_ip)
     return response
 
