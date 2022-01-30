@@ -1,0 +1,32 @@
+<!-- <nav>
+    <ul>
+        <img src="{{ url_for('static', filename='images/platzi.png') }}" alt="Platzi logo">
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li><a href="https://us.dimensional.com/" target="_blank">Dimensional</a></li>
+    </ul>
+</nav> -->
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="{{ url_for('hello') }}">
+        <img src="{{ url_for('static', filename='images/platzi.png') }}" width="30" height="30" alt="">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="{{ url_for('hello') }}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://us.dimensional.com/">Dimensional</a>
+        </li>
+        {% if current_user,is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('auth.logout') }}">Logout</a>
+          </li>
+        {% endif %}
+      </ul>
+    </div>
+  </nav>
